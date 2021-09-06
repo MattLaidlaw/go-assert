@@ -2,12 +2,14 @@ package assert
 
 import (
 	"reflect"
+	"runtime/debug"
 	"testing"
 )
 
 func ExpectEq(actual interface{}, expected interface{}, t *testing.T) {
 	if !reflect.DeepEqual(actual, expected) {
-		t.Errorf("expected %#v, got %#v", expected, actual)
+		debug.PrintStack()
+		t.Errorf("expected %T: %#v, %T: got %#v", expected, expected, actual, actual)
 		t.FailNow()
 	}
 }
