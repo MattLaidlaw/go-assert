@@ -10,5 +10,5 @@ go get github.com/MattLaidlaw/go-assert@d96695b3290cfd16bba4cccf2163f3894341e84b
 The following assertions cause the testing object 't' to fail if evaluated to false
 ```go
 // assert that the first two parameters are identical objects
-ExpectEq(expected interface{}, actual interface{}, t *testing.T)
+ExpectEq(actual interface{}, expected interface{}, t *testing.T)
 ```
